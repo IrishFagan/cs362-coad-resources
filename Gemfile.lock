@@ -312,7 +312,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake
-  bootsnap (>= 1.1.0)
+  bootsnap (~> 1.4)
   bootstrap (~> 4.4.1)
   byebug
   capybara (>= 2.15)
