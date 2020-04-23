@@ -39,6 +39,10 @@ RSpec.describe User, type: :model do
       expect(user).to allow_value("dog@cat.org").for(:email)
       expect(user).to_not allow_value("@coolcats.org").for(:email)
     end
+
+    it "has unique email" do
+      expect(user).to validate_uniqueness_of(:email).case_insensitive
+    end
   end
 
   describe "relationships" do
