@@ -47,6 +47,11 @@ RSpec.describe Region, type: :model do
 			expect(Region.where(name: 'Unspecified')).to_not be_empty
 			expect(Region.unspecified.name).to eq('Unspecified')
 		end
+
+		it "returns the region name when to_s is called" do
+			fake_region = Region.new(name: 'FAKE')
+			expect(fake_region.to_s).to eq('FAKE')
+		end
 	end
 
 end
