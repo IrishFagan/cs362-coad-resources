@@ -1,5 +1,5 @@
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
-/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200413-1789-181j1vp.rb extconf.rb
+/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200423-31821-9bujt8.rb extconf.rb
 creating Makefile
 
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
@@ -33,4 +33,4 @@ linking shared-object bootsnap/bootsnap.so
 
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20200413-1789-ysay9m/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20200423-31821-1j7m1dx/bootsnap

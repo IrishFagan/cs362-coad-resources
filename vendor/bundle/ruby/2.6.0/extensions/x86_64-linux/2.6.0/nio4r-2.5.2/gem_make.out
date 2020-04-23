@@ -1,5 +1,5 @@
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
-/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200413-1789-1081s6v.rb extconf.rb
+/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200423-31821-z5rrh2.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for sys/select.h... yes
@@ -70,4 +70,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20200413-1789-1m3670e
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20200423-31821-ijnkh6

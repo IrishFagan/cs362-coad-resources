@@ -1,5 +1,5 @@
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.10.9/ext/nokogiri
-/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200413-1789-1frn7og.rb extconf.rb
+/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200423-31821-6rnsb4.rb extconf.rb
 checking if the C compiler accepts ... yes
 Building nokogiri using packaged libraries.
 Using mini_portile version 2.4.0
@@ -436,4 +436,4 @@ rm -rf /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/nokogiri-
 
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/nokogiri-1.10.9/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20200413-1789-1azivnh/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20200423-31821-ex8pe2/nokogiri

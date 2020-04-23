@@ -1,5 +1,5 @@
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
-/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200413-1789-uu0hca.rb extconf.rb
+/home/austin/.rvm/rubies/ruby-2.6.5/bin/ruby -I /home/austin/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200423-31821-zsfb01.rb extconf.rb
 creating Makefile
 
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
@@ -12,4 +12,4 @@ linking shared-object skiptrace/internal/cruby.so
 
 current directory: /home/austin/cs362-coad-resources/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.so ./.gem.20200413-1789-1rx0kca/skiptrace/internal
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200423-31821-wab10l/skiptrace/internal
