@@ -41,6 +41,12 @@ RSpec.describe Region, type: :model do
 			expect(Region.where(name: 'Unspecified')).to_not be_empty
 			expect{ Region.unspecified }.to_not change(Region, :count)
 		end
+
+		it "returns an Unspecified region if one exists" do
+			Region.create(name: 'Unspecified')
+			expect(Region.where(name: 'Unspecified')).to_not be_empty
+			expect(Region.unspecified.name).to eq('Unspecified')
+		end
 	end
 
 end
