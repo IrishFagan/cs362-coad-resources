@@ -23,6 +23,10 @@ RSpec.describe Region, type: :model do
 		it "has a name with a min or max value" do
 			expect(region).to validate_length_of(:name).is_at_least(1).is_at_most(255)
 		end
+
+		it "has a case insensitive name" do
+			expect(region).to validate_uniqueness_of(:name).case_insensitive
+		end
 	end
 
 	# Methods
