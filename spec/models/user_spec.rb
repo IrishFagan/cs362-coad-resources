@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+MIN_EMAIL_LENGTH = 1
+MAX_EMAIL_LENGTH = 255
+
 RSpec.describe User, type: :model do
 
   let(:user) { User.new(email: "test@testc.com", encrypted_password: 'abc123efg', role: '') }
@@ -8,6 +11,10 @@ RSpec.describe User, type: :model do
   
     it "has email" do
       expect(user).to respond_to(:email)
+    end
+
+    it "has appropriate email length" do
+      expect(user).to validate_length_of(:email).is_at_least(MIN_EMAIL_LENGTH).is_at_most(MAX_EMAIL_LENGTH)
     end
 
     it "has password" do
