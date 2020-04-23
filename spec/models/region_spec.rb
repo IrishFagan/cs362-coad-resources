@@ -30,5 +30,11 @@ RSpec.describe Region, type: :model do
 	end
 
 	# Methods
+	describe "methods" do
+		
+		it "creates an Unspecified region if one does not exist" do
+			
+		end
+	end
 
 end
