@@ -6,7 +6,7 @@ MAX_FIELD_LENGTH = 255
 
 RSpec.describe User, type: :model do
 
-  let(:user) { User.new(email: "test@testc.com", password: 'abc123efg', role: '') }
+  let(:user) { User.new(email: "test@testc.com", encrypted_password: 'abc123efg', role: '') }
 
   describe "attributes" do
   
