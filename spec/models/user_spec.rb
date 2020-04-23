@@ -4,6 +4,8 @@ MIN_EMAIL_LENGTH = 1
 MIN_PASSWORD_LENGTH = 7
 MAX_FIELD_LENGTH = 255
 
+VALID_EMAIL_REGEX =   /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
 RSpec.describe User, type: :model do
 
   let(:user) { User.new(email: "test@testc.com", encrypted_password: 'abc123efg', role: '') }
@@ -14,20 +16,23 @@ RSpec.describe User, type: :model do
       expect(user).to respond_to(:email)
     end
 
-    it "has appropriate email length" do
-      expect(user).to validate_length_of(:email).is_at_least(MIN_EMAIL_LENGTH).is_at_most(MAX_FIELD_LENGTH)
-    end
-
-    it "has appropriate password length" do
-      expect(user).to validate_length_of(:password).is_at_least(MIN_PASSWORD_LENGTH).is_at_most(MAX_FIELD_LENGTH)
-    end
-
     it "has password" do
       expect(user).to respond_to(:password)
     end
 
     it "has role" do
       expect(user).to respond_to(:role)
+    end
+  end
+
+  describe "validations" do
+
+    it "has appropriate email length" do
+      expect(user).to validate_length_of(:email).is_at_least(MIN_EMAIL_LENGTH).is_at_most(MAX_FIELD_LENGTH)
+    end
+
+    it "has appropriate password length" do
+      expect(user).to validate_length_of(:password).is_at_least(MIN_PASSWORD_LENGTH).is_at_most(MAX_FIELD_LENGTH)
     end
   end
 
