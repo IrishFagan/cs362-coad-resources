@@ -43,5 +43,9 @@ RSpec.describe Organization, type: :model do
       expect(organization).to allow_value("test@test.com").for(:email)
       expect(organization).to allow_value("coolcat@.dot.com").for(:email)
     end
+
+    it "has unique email" do
+      expect(organization).to validate_uniqueness_of(:email).case_insensitive
+    end
   end
 end
