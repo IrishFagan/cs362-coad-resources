@@ -5,8 +5,6 @@ MIN_PASSWORD_LENGTH = 7
 MAX_FIELD_LENGTH = 255
 EXPECTED_EMAIL = "test@test.com"
 
-VALID_EMAIL_REGEX =   /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
 RSpec.describe User, type: :model do
 
   let(:user) { User.new(email: EXPECTED_EMAIL, encrypted_password: 'abc123efg', role: '') }
