@@ -36,6 +36,10 @@ RSpec.describe Organization, type: :model do
     it "has many tickets" do
       expect(organization).to have_many(:tickets)
     end
+
+    it "has many users" do
+      expect(organization).to have_many(:users)
+    end
   end
 
   describe "validations" do
