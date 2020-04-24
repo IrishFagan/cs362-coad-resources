@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Organization, type: :model do
 
   let(:organization) { (Organization.new(email: "test@test.com")) }
+  
   describe "attributes" do
-   
-    it "has email" do
+   it "has email" do
      expect(organization).to respond_to(:email)
     end
 
@@ -37,6 +37,11 @@ RSpec.describe Organization, type: :model do
   describe "validations" do
     it "has appropriate email length" do
       expect(organization).to validate_length_of(:email).is_at_least(1).is_at_most(255)
+    end
+
+    it "has appropriate email format" do
+      expect(organization).to allow_value("test@test.com").for(:email)
+      expect(organization).to allow_value("coolcat@.dot.com").for(:email)
     end
   end
 end
