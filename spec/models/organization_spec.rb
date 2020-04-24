@@ -60,4 +60,10 @@ RSpec.describe Organization, type: :model do
       expect(organization).to validate_uniqueness_of(:email).case_insensitive
     end
   end
+
+  describe "methods" do
+    it "sets organization status to approved" do
+      expect(organization.approve).to eq(:approved)
+    end
+  end
 end
