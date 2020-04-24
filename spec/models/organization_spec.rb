@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Organization, type: :model do
-    it 'exists' do
-        fake_organization = Organization.new
-    end
 
     let(:organization) { (Organization.new) }
 
@@ -11,6 +8,10 @@ RSpec.describe Organization, type: :model do
       
       it "has email" do
         expect(organization).to respond_to(:email)
+      end
+
+      it "has name" do
+        expect(organization).to respond_to(:name)
       end
     end
 end
