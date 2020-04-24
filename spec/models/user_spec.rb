@@ -56,7 +56,6 @@ RSpec.describe User, type: :model do
   describe "methods" do
 
     it "has a string representation that is the email" do
-      user = User.new(email: EXPECTED_EMAIL)
       expect(user.to_s).to eq(EXPECTED_EMAIL)
     end
   end
