@@ -3,12 +3,13 @@ require 'rails_helper'
 MIN_EMAIL_LENGTH = 1
 MIN_PASSWORD_LENGTH = 7
 MAX_FIELD_LENGTH = 255
+EXPECTED_EMAIL = "test@test.com"
 
 VALID_EMAIL_REGEX =   /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 RSpec.describe User, type: :model do
 
-  let(:user) { User.new(email: "test@testc.com", encrypted_password: 'abc123efg', role: '') }
+  let(:user) { User.new(email: EXPECTED_EMAIL, encrypted_password: 'abc123efg', role: '') }
 
   describe "attributes" do
   
@@ -50,6 +51,13 @@ RSpec.describe User, type: :model do
     it "belongs to organization" do
       expect(user).to belong_to(:organization)
     end
+  end
 
+  describe "methods" do
+
+    it "has a string representation that is the email" do
+      user = User.new(email: EXPECTED_EMAIL)
+      expect(user.to_s).to eq(EXPECTED_EMAIL)
+    end
   end
 end
