@@ -32,6 +32,10 @@ RSpec.describe Organization, type: :model do
     it "has secondary phone" do
       expect(organization).to respond_to(:secondary_phone)
     end
+  
+    it "has many tickets" do
+      expect(organization).to have_many(:tickets)
+    end
   end
 
   describe "validations" do
