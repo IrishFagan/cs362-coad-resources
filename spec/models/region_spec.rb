@@ -31,9 +31,26 @@ RSpec.describe Region, type: :model do
 
 	# Methods
 	describe "methods" do
-		
 		it "creates an Unspecified region if one does not exist" do
-			
+			expect(Region.where(name: 'Unspecified')).to be_empty
+			expect{ Region.unspecified }.to change(Region, :count)
+		end
+
+		it "finds an Unspecified region if one does exist" do
+			Region.create(name: 'Unspecified')
+			expect(Region.where(name: 'Unspecified')).to_not be_empty
+			expect{ Region.unspecified }.to_not change(Region, :count)
+		end
+
+		it "returns an Unspecified region if one exists" do
+			Region.create(name: 'Unspecified')
+			expect(Region.where(name: 'Unspecified')).to_not be_empty
+			expect(Region.unspecified.name).to eq('Unspecified')
+		end
+
+		it "returns the region name when to_s is called" do
+			fake_region = Region.new(name: 'FAKE')
+			expect(fake_region.to_s).to eq('FAKE')
 		end
 	end
 
