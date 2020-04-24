@@ -69,5 +69,10 @@ RSpec.describe Organization, type: :model do
     it "sets organization status to rejected" do
       expect(organization.reject).to eq(:rejected)
     end
+
+    it "sets default status to submitted on instantiation" do
+      oranization = Organization.new
+      expect(organization.status).to eq("submitted")
+    end
   end
 end
