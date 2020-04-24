@@ -47,5 +47,9 @@ RSpec.describe Organization, type: :model do
     it "has unique email" do
       expect(organization).to validate_uniqueness_of(:email).case_insensitive
     end
+
+    it "has unique name" do
+      expect(organization).to validate_uniqueness_of(:email).case_insensitive
+    end
   end
 end
