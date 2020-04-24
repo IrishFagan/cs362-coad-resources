@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Organization, type: :model do
 
-  let(:organization) { (Organization.new(email: "test@test.com")) }
+  let(:organization) { (Organization.new(email: "test@test.com", name: "FAKE")) }
   
   describe "attributes" do
    it "has email" do
@@ -62,6 +62,10 @@ RSpec.describe Organization, type: :model do
   end
 
   describe "methods" do
+    it "has a string representation that is the organization name" do
+      expect(organization.to_s).to eq(organization.name)
+    end
+
     it "sets organization status to approved" do
       expect(organization.approve).to eq(:approved)
     end
