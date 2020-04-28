@@ -54,9 +54,10 @@ RSpec.describe ResourceCategory, type: :model do
       expect(resource_category.active).to eq(true)
 		end
 
-		#it "updates the active status to false" do
-		#	expect(resource_category.deactivate).to eq(false)
-		#end
+		it "updates the active status to false" do
+			resource_category.deactivate
+      expect(resource_category.active).to eq(false)
+		end
 
 		it "expects to not be active" do
 			expect(resource_category.inactive?).to_not eq(:active)
