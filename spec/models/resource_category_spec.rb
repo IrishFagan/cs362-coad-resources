@@ -34,4 +34,28 @@ RSpec.describe ResourceCategory, type: :model do
 	end
 
 	# Methods
+	describe "methods" do
+		it "creates an Unspecified resource category if one does not exist" do
+			expect(ResourceCategory.where(name: 'Unspecified')).to be_empty
+			expect{ ResourceCategory.unspecified }.to change(ResourceCategory, :count)
+		end
+
+		it "finds an Unspecified resource category if one does exist" do
+			ResourceCategory.create(name: 'Unspecified')
+			expect(ResourceCategory.where(name: 'Unspecified')).to_not be_empty
+			expect{ ResourceCategory.unspecified }.to_not change(ResourceCategory, :count)
+		end
+
+		it "returns an Unspecified resource category if one exists" do
+			ResourceCategory.create(name: 'Unspecified')
+			expect(ResourceCategory.where(name: 'Unspecified')).to_not be_empty
+			expect(ResourceCategory.unspecified.name).to eq('Unspecified')
+		end
+
+		it "returns the resource category name when to_s is called" do
+			fake_rescat = ResourceCategory.new(name: 'FAKE')
+			expect(fake_rescat.to_s).to eq('FAKE')
+		end
+	end
+
 end
