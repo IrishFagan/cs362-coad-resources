@@ -4,7 +4,6 @@ RSpec.describe ResourceCategory, type: :model do
 
 	let (:resource_category) { ResourceCategory.new }
 
-	# Relationship
 	describe "relationship" do
 		it "has and belongs to many organizations" do
 			expect(resource_category).to have_and_belong_to_many(:organizations)
@@ -15,14 +14,12 @@ RSpec.describe ResourceCategory, type: :model do
 		end
 	end
 
-	# Attributes
 	describe "attributes" do
 		it "has a name" do
 			expect(resource_category).to respond_to(:name)
 		end
 	end
 
-	# Validations
 	describe "validations" do
 		it "has a name with a min or max value" do
 			expect(resource_category).to validate_length_of(:name).is_at_least(1).is_at_most(255)
@@ -33,7 +30,6 @@ RSpec.describe ResourceCategory, type: :model do
 		end
 	end
 
-	# Methods
 	describe "methods" do
 		it "creates an Unspecified resource category if one does not exist" do
 			expect(ResourceCategory.where(name: 'Unspecified')).to be_empty
@@ -50,6 +46,19 @@ RSpec.describe ResourceCategory, type: :model do
 			ResourceCategory.create(name: 'Unspecified')
 			expect(ResourceCategory.where(name: 'Unspecified')).to_not be_empty
 			expect(ResourceCategory.unspecified.name).to eq('Unspecified')
+		end
+
+		#ask about these two tests...
+		it "updates the active status to true" do
+			expect(resource_category.activate).to eq(false)
+		end
+
+		it "updates the active status to false" do
+			expect(resource_category.deactivate).to eq(false)
+		end
+
+		it "expects to not be active" do
+			expect(resource_category.inactive?).to_not eq(:active)
 		end
 
 		it "returns the resource category name when to_s is called" do
