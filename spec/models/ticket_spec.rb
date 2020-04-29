@@ -21,6 +21,11 @@ RSpec.describe Ticket, type: :model do
 	end
 
 	#attributes
+	describe "attributes" do
+		it "has a name" do
+			expect(ticket).to respond_to(:name)
+		end
+	end
 
 	#validations
 
