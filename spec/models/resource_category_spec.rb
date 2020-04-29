@@ -22,7 +22,7 @@ RSpec.describe ResourceCategory, type: :model do
 
 	describe "validations" do
 		it "has a name with a min or max value" do
-			expect(resource_category).to validate_length_of(:name).is_at_least(1).is_at_most(255)
+			expect(resource_category).to validate_length_of(:name).is_at_least(1).is_at_most(255).on(:create)
 		end
 
 		it "has a case insensitive name" do
