@@ -46,7 +46,9 @@ RSpec.describe Ticket, type: :model do
 	#methods
 	describe "methods" do
 		it "expects to not be closed" do
-			expect(ticket.open?).to_not eq(:closed)
+			ticket.open?
+			expect(ticket.closed).to_not eq(:closed)
 		end
+
 	end
 end
