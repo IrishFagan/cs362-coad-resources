@@ -37,6 +37,9 @@ RSpec.describe Ticket, type: :model do
 			expect(ticket).to validate_length_of(:name).is_at_least(1).is_at_most(255).on(:create)
 		end
 
+		it "has a max description length" do
+			expect(ticket).to validate_length_of(:description).is_at_most(1020).on(:create)
+		end
 	end
 
 	#methods
