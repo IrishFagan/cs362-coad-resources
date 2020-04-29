@@ -14,6 +14,10 @@ RSpec.describe Ticket, type: :model do
 			expect(ticket).to belong_to(:resource_category)
 		end
 
+		#check about .optional in ticket.rb
+		it "can belong to organization" do
+			expect(ticket).to belong_to(:organization)
+		end
 	end
 
 	#attributes
