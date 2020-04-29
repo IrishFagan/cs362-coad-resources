@@ -40,8 +40,13 @@ RSpec.describe Ticket, type: :model do
 		it "has a max description length" do
 			expect(ticket).to validate_length_of(:description).is_at_most(1020).on(:create)
 		end
+
 	end
 
 	#methods
-
+	describe "methods" do
+		it "expects to not be closed" do
+			expect(ticket.open?).to_not eq(:closed)
+		end
+	end
 end
