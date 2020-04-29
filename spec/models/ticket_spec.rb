@@ -32,6 +32,12 @@ RSpec.describe Ticket, type: :model do
 	end
 
 	#validations
+	describe "validations" do
+		it "has a name with a min or max value" do
+			expect(ticket).to validate_length_of(:name).is_at_least(1).is_at_most(255).on(:create)
+		end
+
+	end
 
 	#methods
 
