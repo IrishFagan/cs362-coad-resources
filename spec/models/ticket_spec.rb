@@ -4,7 +4,6 @@ RSpec.describe Ticket, type: :model do
 
 	let (:ticket) { Ticket.new }
 
-	#relationships
 	describe "relationship" do
 		it "belongs to region" do
 			expect(ticket).to belong_to(:region)
@@ -20,7 +19,6 @@ RSpec.describe Ticket, type: :model do
 		end
 	end
 
-	#attributes
 	describe "attributes" do
 		it "has a name" do
 			expect(ticket).to respond_to(:name)
@@ -31,7 +29,6 @@ RSpec.describe Ticket, type: :model do
 		end
 	end
 
-	#validations
 	describe "validations" do
 		it "has a name with a min or max value" do
 			expect(ticket).to validate_length_of(:name).is_at_least(1).is_at_most(255).on(:create)
@@ -43,16 +40,22 @@ RSpec.describe Ticket, type: :model do
 
 	end
 
-	#methods
 	describe "methods" do
 		it "expects to not be closed" do
 			open_ticket = ticket.open?
 			expect(open_ticket).to eq(true)
 		end
 
-		it "checks if organization is present" do
-			#ticket.captured?
-			#expect(ticket.organization).to eq(true)
+# Need some help here...
+#		it "checks if organization is present" do
+#			organization_check = ticket.captured?
+#			expect(organization_check).to eq(:organization)
+#		end
+
+		it "returns the Ticket id when to_s is called" do
+			ticket = Ticket.new(id: 5)
+			expect(ticket.to_s).to eq("Ticket 5")
 		end
+
 	end
 end
