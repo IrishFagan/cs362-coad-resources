@@ -47,10 +47,10 @@ RSpec.describe Ticket, type: :model do
 		end
 
 # Need some help here...
-#		it "checks if organization is present" do
-#			organization_check = ticket.captured?
-#			expect(organization_check).to eq(:organization)
-#		end
+		it "checks if ticket belongs to non-existent organization" do
+			organization_check = ticket.captured?
+			expect(organization_check).to eq(false)
+		end
 
 		it "returns the Ticket id when to_s is called" do
 			ticket = Ticket.new(id: 5)
