@@ -14,16 +14,14 @@ RSpec.describe Ticket, type: :model do
 		end
 
 		#check about .optional in ticket.rb
-		it "can belong to organization" do
-			expect(ticket).to belong_to(:organization)
-		end
+		it { should belong_to(:organization).optional }
 	end
 
 	describe "attributes" do
 		it "has a name" do
 			expect(ticket).to respond_to(:name)
 		end
-
+		
 		it "has a phone number" do
 			expect(ticket).to respond_to(:phone)
 		end
