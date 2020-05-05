@@ -5,6 +5,7 @@ RSpec.describe Ticket, type: :model do
 	let (:ticket) { Ticket.new }
 
 	describe "relationship" do
+
 		it "belongs to region" do
 			expect(ticket).to belong_to(:region)
 		end
@@ -13,11 +14,12 @@ RSpec.describe Ticket, type: :model do
 			expect(ticket).to belong_to(:resource_category)
 		end
 
-		#check about .optional in ticket.rb
 		it { should belong_to(:organization).optional }
+
 	end
 
 	describe "attributes" do
+
 		it "has a name" do
 			expect(ticket).to respond_to(:name)
 		end
@@ -28,6 +30,7 @@ RSpec.describe Ticket, type: :model do
 	end
 
 	describe "validations" do
+
 		it "has a name with a min or max value" do
 			expect(ticket).to validate_length_of(:name).is_at_least(1).is_at_most(255).on(:create)
 		end
@@ -39,6 +42,7 @@ RSpec.describe Ticket, type: :model do
 	end
 
 	describe "methods" do
+
 		it "expects to not be closed" do
 			open_ticket = ticket.open?
 			expect(open_ticket).to eq(true)
@@ -56,4 +60,5 @@ RSpec.describe Ticket, type: :model do
 		end
 
 	end
+	
 end

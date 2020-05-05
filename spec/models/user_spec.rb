@@ -42,11 +42,13 @@ RSpec.describe User, type: :model do
     it "has unique email" do
       expect(user).to validate_uniqueness_of(:email).case_insensitive
     end
+
   end
 
   describe "relationships" do
 
     it { should belong_to(:organization).optional }
+
   end
 
   describe "methods" do
@@ -58,5 +60,7 @@ RSpec.describe User, type: :model do
     it "sets the default role of the user to organization" do
       expect(user.set_default_role).to eq("organization")
     end
+
   end
+  
 end
