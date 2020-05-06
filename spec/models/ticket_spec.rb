@@ -61,18 +61,19 @@ RSpec.describe Ticket, type: :model do
 			expect(ticket.to_s).to eq("Ticket 5")
 		end
 
-    describe "scope" do
-      it "returns open tickets" do
-        #step 1. Create an open tickt and a closed ticket
-        closed_ticket = Ticket.create(closed: true)
-        open_ticket = Ticket.create(closed: false)
-        #step 2. Retreive the array of tickets using Ticket.open
-        ticket_arr = Ticket.open
-        #step 3. Assert open ticket is in array, closed is not
-        expect(ticket_arr).to 
-      end
+  end
 
-    end
+  describe "scope" do
+
+    #it "returns open tickets" do
+    #  #step 1. Create an open tickt and a closed ticket
+    #  closed_ticket = Ticket.create(closed: true)
+    #  open_ticket = Ticket.create(closed: false)
+    #  #step 2. Retreive the array of tickets using Ticket.open
+    #  ticket_arr = Ticket.open
+    #  #step 3. Assert open ticket is in array, closed is not
+    #  expect(ticket_arr).to 
+    #end
 
 	end
 
