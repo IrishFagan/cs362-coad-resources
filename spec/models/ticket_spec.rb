@@ -49,11 +49,11 @@ RSpec.describe Ticket, type: :model do
 		end
 
 # Need some help here...
-		it "checks if ticket belongs to non-existent organization" do
-      organization = Organization.new()
-      ticket = Ticket.new()
-      ticket.organization = organization
-      expect(ticket.organization).to eq(organization)
+		it "checks if ticket belongs to organization" do
+    	organization = Organization.new()
+    	ticket = Ticket.new()
+    	ticket.organization = organization
+    	expect(ticket.organization).to eq(organization)
 		end
 
 		it "returns the Ticket id when to_s is called" do
@@ -61,7 +61,7 @@ RSpec.describe Ticket, type: :model do
 			expect(ticket.to_s).to eq("Ticket 5")
 		end
 
-    describe "open" do
+    describe "scope" do
       it "returns open tickets" do
         #step 1. Create an open tickt and a closed ticket
         closed_ticket = Ticket.create(closed: true)
@@ -71,9 +71,9 @@ RSpec.describe Ticket, type: :model do
         #step 3. Assert open ticket is in array, closed is not
         expect(ticket_arr).to 
       end
+
     end
 
 	end
-	
 
 end
