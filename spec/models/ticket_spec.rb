@@ -73,9 +73,15 @@ RSpec.describe Ticket, type: :model do
   let(:open_ticket) { create(:ticket, :open_ticket) }
 
     it "returns open tickets" do
-      ticket_arr = Ticket.open
-      expect(ticket_arr).to include(open_ticket)
-      expect(ticket_arr).not_to include(closed_ticket)
+      open_tickets = Ticket.open
+      expect(open_tickets).to include(open_ticket)
+      expect(open_tickets).not_to include(closed_ticket)
+    end
+
+    it "returns closed tickets" do
+      closed_tickets = Ticket.closed
+      expect(closed_tickets).to include(closed_ticket)
+      expect(closed_tickets).not_to include(open_ticket)
     end
 
   end
