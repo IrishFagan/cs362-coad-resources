@@ -4,6 +4,9 @@ RSpec.describe Ticket, type: :model do
 
 	let (:ticket) { Ticket.new }
 
+  let(:resource_category) { ResourceCategory.new }
+  let(:region) { Region.new }
+
 	describe "relationship" do
 
 		it "belongs to region" do
@@ -65,15 +68,14 @@ RSpec.describe Ticket, type: :model do
 
   describe "scope" do
 
-    #it "returns open tickets" do
-    #  #step 1. Create an open tickt and a closed ticket
-    #  closed_ticket = Ticket.create(closed: true)
-    #  open_ticket = Ticket.create(closed: false)
-    #  #step 2. Retreive the array of tickets using Ticket.open
-    #  ticket_arr = Ticket.open
-    #  #step 3. Assert open ticket is in array, closed is not
-    #  expect(ticket_arr).to 
-    #end
+  let(:closed_ticket) { create(:ticket, :closed_ticket) }
+  let(:open_ticket) { create(:ticket, :open_ticket) }
+
+    it "returns open tickets" do
+      ticket_arr = Ticket.open
+      expect(ticket_arr).to include(open_ticket)
+      expect(ticket_arr).not_to include(closed_ticket)
+    end
 
 	end
 
