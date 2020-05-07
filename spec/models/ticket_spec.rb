@@ -71,6 +71,7 @@ RSpec.describe Ticket, type: :model do
 
   let(:closed_ticket) { create(:ticket, :closed_ticket) }
   let(:open_ticket) { create(:ticket, :open_ticket) }
+  let(:ticket_with_organization) { create(:ticket, [:open_ticket, :with_org]) }
 
     it "returns open tickets" do
       open_tickets = Ticket.open
@@ -82,6 +83,12 @@ RSpec.describe Ticket, type: :model do
       closed_tickets = Ticket.closed
       expect(closed_tickets).to include(closed_ticket)
       expect(closed_tickets).not_to include(open_ticket)
+    end
+
+    it "returns open tickets that have an organization" do
+    	tickets = Ticket.all_organization
+    	expect(tickets).to include(ticket_with_organization)
+    	expect(tickets).to_not include(open_ticket)
     end
 
   end

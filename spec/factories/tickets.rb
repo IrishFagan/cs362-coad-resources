@@ -9,10 +9,18 @@ FactoryBot.define do
       name { 'fake_open' }
       closed { false }
     end
+
     trait :closed_ticket do
       name { 'fake_closed' }
       closed { true }
     end
 
+    trait :with_org do
+      organization { create(:organization) }
+    end
+
   end
+  
 end
+
+#build(:ticket, [:open_ticket, :with_org])
