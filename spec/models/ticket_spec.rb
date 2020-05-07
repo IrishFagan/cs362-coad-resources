@@ -30,6 +30,7 @@ RSpec.describe Ticket, type: :model do
 		it "has a phone number" do
 			expect(ticket).to respond_to(:phone)
 		end
+
 	end
 
 	describe "validations" do
@@ -77,6 +78,6 @@ RSpec.describe Ticket, type: :model do
       expect(ticket_arr).not_to include(closed_ticket)
     end
 
-	end
+  end
 
 end
