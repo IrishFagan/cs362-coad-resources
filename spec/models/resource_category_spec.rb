@@ -67,6 +67,7 @@ RSpec.describe ResourceCategory, type: :model do
 			fake_rescat = ResourceCategory.new(name: 'FAKE')
 			expect(fake_rescat.to_s).to eq('FAKE')
 		end
+
 	end
 
 	describe "scope" do
@@ -84,6 +85,7 @@ RSpec.describe ResourceCategory, type: :model do
 			expect(resource_category).to include(inactive_resource_category)
 			expect(resource_category).to_not include(active_resource_category)
 		end
+		
 	end
 
 end
