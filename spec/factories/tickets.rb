@@ -16,7 +16,7 @@ FactoryBot.define do
     end
 
     trait :with_org do
-      organization { create(:organization) }
+      organization
     end
 
   end
