@@ -95,8 +95,10 @@ RSpec.describe Ticket, type: :model do
     #This may be testing incorrectly, check it out?
     it "returns open ticket with particular organization id" do
     	ticket = Ticket.organization(1)
-    	expect(ticket).to include(ticket_with_organization_2)
-    	expect(ticket).to_not include(ticket_with_organization)
+    	#byebug
+    	expect(ticket.organization).to eq(ticket_with_organization.id)
+    	#expect(ticket).to include(ticket_with_organization_2)
+    	#expect(ticket).to_not include(ticket_with_organization)
     end
 
   end
