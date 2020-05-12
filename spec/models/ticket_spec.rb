@@ -92,7 +92,6 @@ RSpec.describe Ticket, type: :model do
     	expect(tickets).to_not include(open_ticket)
     end
 
-    #This may be testing incorrectly, check it out?
     it "returns open ticket with particular organization id" do
     	expect(Ticket.organization(ticket_with_organization.organization_id)).to include(ticket_with_organization)
     	expect(Ticket.organization(ticket_with_organization.organization_id)).to_not include(closed_ticket_with_organization)
@@ -114,6 +113,7 @@ RSpec.describe Ticket, type: :model do
     	expect(Ticket.region(open_ticket.region_id)).to_not include(closed_ticket_with_organization)
     end
 
+    # Used closed_ticket to change it up a bit
     it "returns a ticket with a particular resource category id" do
     	expect(Ticket.resource_category(closed_ticket.resource_category_id)).to include(closed_ticket)    	
     	expect(Ticket.resource_category(closed_ticket.resource_category_id)).to_not include(open_ticket)
