@@ -107,11 +107,18 @@ RSpec.describe Ticket, type: :model do
     	expect(Ticket.closed_organization(closed_ticket_with_organization.organization_id)).to_not include(closed_ticket)
     end
 
-    it "returns any ticket with particular region id" do
+    it "returns a ticket with particular region id" do
     	expect(Ticket.region(open_ticket.region_id)).to include(open_ticket)
     	expect(Ticket.region(open_ticket.region_id)).to_not include(closed_ticket)
     	expect(Ticket.region(open_ticket.region_id)).to_not include(ticket_with_organization)
     	expect(Ticket.region(open_ticket.region_id)).to_not include(closed_ticket_with_organization)
+    end
+
+    it "returns a ticket with a particular resource category id" do
+    	expect(Ticket.resource_category(closed_ticket.resource_category_id)).to include(closed_ticket)    	
+    	expect(Ticket.resource_category(closed_ticket.resource_category_id)).to_not include(open_ticket)
+    	expect(Ticket.resource_category(closed_ticket.resource_category_id)).to_not include(ticket_with_organization)
+    	expect(Ticket.resource_category(closed_ticket.resource_category_id)).to_not include(closed_ticket_with_organization)
 
     end
 
