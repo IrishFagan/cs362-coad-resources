@@ -13,6 +13,14 @@ RSpec.describe RegionsController, type: :controller do
     end
 
   end
+
+  it "tests authentication of an admin user" do
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    admin_user = FactoryBot.create(:user, :admin)
+    sign_in admin_user
+    expect(admin_user).to be_valid()
+  end
+
 end
 
 #  desribe "public" do
