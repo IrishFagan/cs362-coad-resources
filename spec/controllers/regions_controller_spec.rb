@@ -1,30 +1,24 @@
 require 'rails_helper'
+require 'rspec/rails'
 
 RSpec.describe RegionsController, type: :controller do
 
   describe "user" do
 
-    let(:regular_user) { create(:user) }
-
-    before(:all) do
-      sign_in @regular_user, event: :authentication
+    it "tests authentication of a regular user" do
+      @request.env["devise.mapping"] = Devise.mappings[:user]
+      regular_user = FactoryBot.create(:user)
+      sign_in regular_user
+      expect(regular_user).to be_valid()
     end
-  end
 
-#
-#  describe "admin" do
-#
-#    before(:all) do
-#      #look up sign_in from devise(?)
-#    end
-#
-#  end
-#
+  end
+end
+
 #  desribe "public" do
 #    #7 tests
 #  end
 #
-end
 
 
 #  it "temp test factory" do
