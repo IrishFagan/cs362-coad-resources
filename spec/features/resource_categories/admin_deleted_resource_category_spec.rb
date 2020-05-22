@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Deleting a Resource Category', type: :feature do
 
-  it "cdeletes a resource category as an admin" do
+  it "deletes a resource category as an admin" do
     admin_user = FactoryBot.create(:user, :admin)
   
 		log_in_as(admin_user)
