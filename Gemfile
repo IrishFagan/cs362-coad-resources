@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'airbrake'
 gem 'bootstrap', '~> 4.4.1'
 gem 'coffee-rails', '~> 4.2'
