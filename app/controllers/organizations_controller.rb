@@ -23,7 +23,9 @@ class OrganizationsController < ApplicationController
     if @new_organization.save && current_user.save
       redirect_to organization_application_submitted_path
       email = UserMailer.with(to: User.where(role: :admin).pluck(:email), new_organization: @new_organization).new_organization_application
-      if email then email.deliver_now end
+      #this line was changed because 'create_organization_application_spec' wouldn't work with the original line:
+      #if email then email.deliver_now end
+      if email then email.deliver_later end
     else
       @organization = @new_organization
       render :new
