@@ -9,8 +9,8 @@ FactoryBot.define do
 		secondary_name { "Fake_secondary" }
 		secondary_phone { "+43 45 333 45 67" }
 
-		trait :pending do
-			status { :pending }
+		trait :submitted do
+			status { :submitted }
 		end
 
 	end
