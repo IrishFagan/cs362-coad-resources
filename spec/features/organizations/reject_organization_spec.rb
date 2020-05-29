@@ -5,7 +5,7 @@ RSpec.describe 'Rejecting an organization', type: :feature do
 	let(:admin) { (User.new(email: 'fakeadmin@fake.com', password: 'password', role: :admin)) }
 
 	it "rejects an organization that a regualr user has submitted" do
-		
+
 		organization = FactoryBot.create(:organization, :submitted)    
 
 		admin.confirm
@@ -15,10 +15,10 @@ RSpec.describe 'Rejecting an organization', type: :feature do
     visit(organizations_path)
     click_on('Pending')
     click_on('Review')
-
     click_on('Reject')
 
     expect(page).to have_content('has been rejected')
+    
   end
 
 end
