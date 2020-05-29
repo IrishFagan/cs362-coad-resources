@@ -14,6 +14,6 @@ RSpec.describe 'User registration', type: :feature do
 		expect(page).to have_content('confirmation link')
 		user = User.find_by(email: "signup@test.com")
 		visit(user_confirmation_path(confirmation_token: user.confirmation_token))
-
+		
 	end
 end
