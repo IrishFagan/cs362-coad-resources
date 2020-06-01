@@ -3,6 +3,14 @@ require 'rspec/rails'
 
 RSpec.describe RegionsController, type: :controller do
 
+  context "as a non-logged in user" do
+    
+    describe "get#index" do
+      specify { expect(get(:index)).to redirect_to(new_user_session_path) }
+    end
+
+  end
+
   describe "user" do
 
     it "tests authentication of a regular user" do
