@@ -23,7 +23,13 @@ RSpec.describe RegionsController, type: :controller do
       sign_in(user)
     end
 
-    specify { expect(get(:index)).to redirect_to(dashboard_path) }
+    describe "user#index" do
+      specify { expect(get(:index)).to redirect_to(dashboard_path) }
+    end
+
+    describe "user#new" do
+      specify { expect(get(:new)).to redirect_to(dashboard_path) }
+    end
 
   end
 
