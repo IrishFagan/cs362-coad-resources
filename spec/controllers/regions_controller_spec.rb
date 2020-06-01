@@ -13,7 +13,7 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:new)).to redirect_to(new_user_session_path) }
     end
 
-    describe "post#create" do
+    describe "get#show" do
       specify { expect(get(:show, params: { :id => 1 })).to redirect_to(new_user_session_path) }
     end
 
@@ -21,6 +21,17 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:edit, params: { :id => 1 })).to redirect_to(new_user_session_path) }
     end
 
+    describe "post#create" do
+      specify { expect(get(:create)).to redirect_to(new_user_session_path) }
+    end
+
+    describe "patch#update" do
+      specify { expect(get(:update, params: { :id => 1 })).to redirect_to(new_user_session_path) }
+    end
+
+    describe "delete#destroy" do
+      specify { expect(get(:show, params: { :id => 1 })).to redirect_to(new_user_session_path) }
+    end
 
   end
 
