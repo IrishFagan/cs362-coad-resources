@@ -17,6 +17,11 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:show, params: { :id => 1 })).to redirect_to(new_user_session_path) }
     end
 
+    describe "get#edit" do
+      specify { expect(get(:edit, params: { :id => 1 })).to redirect_to(new_user_session_path) }
+    end
+
+
   end
 
   context "as an organization user" do
