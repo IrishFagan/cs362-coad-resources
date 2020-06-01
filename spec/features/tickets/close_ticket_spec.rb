@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Closing a ticket', type: :feature do
 
-  it "deletes a ticket" do
+  it "closes a ticket" do
     admin = FactoryBot.create(:user, :admin)
     ticket = FactoryBot.create(:ticket, :open_ticket)
   
