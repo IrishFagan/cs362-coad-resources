@@ -13,6 +13,10 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:new)).to redirect_to(new_user_session_path) }
     end
 
+    describe "post#create" do
+      specify { expect(get(:show, params: { :id => 1 })).to redirect_to(new_user_session_path) }
+    end
+
   end
 
   context "as an organization user" do
@@ -23,11 +27,11 @@ RSpec.describe RegionsController, type: :controller do
       sign_in(user)
     end
 
-    describe "user#index" do
+    describe "#index" do
       specify { expect(get(:index)).to redirect_to(dashboard_path) }
     end
 
-    describe "user#new" do
+    describe "#new" do
       specify { expect(get(:new)).to redirect_to(dashboard_path) }
     end
 
