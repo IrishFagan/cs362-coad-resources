@@ -56,22 +56,32 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:show, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
-    describe "edit" do
+    describe "#edit" do
       specify { expect(get(:edit, params: { :id => 1})).to redirect_to(dashboard_path) }
     end
 
-    describe "create" do
+    describe "#create" do
       specify { expect(get(:create, params: { :id => 1})).to redirect_to(dashboard_path) }
     end
 
-    describe "update" do
+    describe "#update" do
       specify { expect(get(:update, params: { :id => 1})).to redirect_to(dashboard_path) }
     end
 
-    describe "destroy" do
+    describe "#destroy" do
       specify { expect(get(:destroy, params: { :id => 1})).to redirect_to(dashboard_path) }
     end
 
+  end
+
+  context "as an admin" do
+
+    let(:admin) { create(:user, :admin) }
+    let(:region) { create(:region) }
+
+    describe "index" do
+
+    end
 
   end
 
