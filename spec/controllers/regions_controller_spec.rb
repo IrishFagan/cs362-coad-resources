@@ -84,7 +84,7 @@ RSpec.describe RegionsController, type: :controller do
     end
 
     describe "index" do
-
+      specify { expect(get(:index)).to be_successful }
     end
 
   end
