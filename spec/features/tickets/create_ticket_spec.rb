@@ -11,14 +11,14 @@ RSpec.describe 'Creating a Ticket', type: :feature do
 
   it "creates a new ticket" do
 
-    #region = FactoryBot.create(:region)
-    #resource_category = FactoryBot.create(:resource_category, :active)
+    region = FactoryBot.create(:region, :fake_region)
+    resource_category = FactoryBot.create(:resource_category, :active, :fake_resource_category)
     visit(new_ticket_path)
 
     fill_in('Full Name', with: 'Fake Name')
     fill_in('Phone Number', with: '503-910-4740')
-    select('Select', from: "ticket_region_id")
-    select('Select', from: "ticket_resource_category_id")
+    select('Very Real Region', from: "ticket_region_id")
+    select('Very Real Resource Category', from: "ticket_resource_category_id")
     fill_in('Description', with: 'Fake Descripition')
 
     click_on('Send this help request')
