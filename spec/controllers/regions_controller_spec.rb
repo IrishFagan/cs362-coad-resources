@@ -56,6 +56,10 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:show, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
+    describe "edit" do
+      specify { expect(get(:edit, params: { :id => 1})).to redirect_to(dashboard_path) }
+    end
+
   end
 
   describe "user" do
