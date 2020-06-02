@@ -57,19 +57,19 @@ RSpec.describe RegionsController, type: :controller do
     end
 
     describe "#edit" do
-      specify { expect(get(:edit, params: { :id => 1})).to redirect_to(dashboard_path) }
+      specify { expect(get(:edit, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
     describe "#create" do
-      specify { expect(get(:create, params: { :id => 1})).to redirect_to(dashboard_path) }
+      specify { expect(get(:create, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
     describe "#update" do
-      specify { expect(get(:update, params: { :id => 1})).to redirect_to(dashboard_path) }
+      specify { expect(get(:update, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
     describe "#destroy" do
-      specify { expect(get(:destroy, params: { :id => 1})).to redirect_to(dashboard_path) }
+      specify { expect(get(:destroy, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
   end
@@ -89,6 +89,10 @@ RSpec.describe RegionsController, type: :controller do
 
     describe "get#new" do
       specify { expect(get(:new)).to be_successful }
+    end
+
+    describe "get#show" do
+      specify {expect(get(:show, params: { :id => region.id })).to be_successful }
     end
 
   end
