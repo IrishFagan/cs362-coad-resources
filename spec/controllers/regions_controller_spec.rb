@@ -83,8 +83,12 @@ RSpec.describe RegionsController, type: :controller do
       sign_in(admin)
     end
 
-    describe "index" do
+    describe "get#index" do
       specify { expect(get(:index)).to be_successful }
+    end
+
+    describe "get#new" do
+      specify { expect(get(:new)).to be_successful }
     end
 
   end
