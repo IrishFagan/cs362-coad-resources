@@ -79,6 +79,10 @@ RSpec.describe RegionsController, type: :controller do
     let(:admin) { create(:user, :admin) }
     let(:region) { create(:region) }
 
+    before do
+      sign_in(admin)
+    end
+
     describe "index" do
 
     end
