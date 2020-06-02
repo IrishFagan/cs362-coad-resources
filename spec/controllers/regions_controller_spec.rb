@@ -38,6 +38,7 @@ RSpec.describe RegionsController, type: :controller do
   context "as an organization user" do
 
     let(:user) { create(:user) }
+    let(:region) { create(:region) }
 
     before do
       sign_in(user)
@@ -49,6 +50,10 @@ RSpec.describe RegionsController, type: :controller do
 
     describe "#new" do
       specify { expect(get(:new)).to redirect_to(dashboard_path) }
+    end
+
+    describe "#show" do
+      specify { expect(get(:show, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
   end
