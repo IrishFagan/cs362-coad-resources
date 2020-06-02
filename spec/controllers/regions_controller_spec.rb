@@ -68,6 +68,10 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:update, params: { :id => 1})).to redirect_to(dashboard_path) }
     end
 
+    describe "destroy" do
+      specify { expect(get(:destroy, params: { :id => 1})).to redirect_to(dashboard_path) }
+    end
+
 
   end
 
