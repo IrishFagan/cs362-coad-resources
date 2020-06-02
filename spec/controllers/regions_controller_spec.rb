@@ -72,6 +72,7 @@ RSpec.describe RegionsController, type: :controller do
       specify { expect(get(:destroy, params: { :id => 1 })).to redirect_to(dashboard_path) }
     end
 
+
   end
 
   context "as an admin" do
@@ -92,7 +93,19 @@ RSpec.describe RegionsController, type: :controller do
     end
 
     describe "get#show" do
-      specify {expect(get(:show, params: { :id => region.id })).to be_successful }
+      specify { expect(get(:show, params: { :id => region.id })).to be_successful }
+    end
+
+    describe "get#edit" do
+      specify { expect(get(:edit, params: { :id => region.id})).to be_successful }
+    end
+
+    describe "post#create" do
+      specify { expect(post(:create, params: { :id => region.id, region: attributes_for(:region) })).to redirect_to(regions_path) }
+    end
+
+    describe "patch#update" do
+      specify { expect(patch(:update, params: { :id => region.id, region: attributes_for(:region) })).to redirect_to(region_path(region)) }
     end
 
   end
